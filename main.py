@@ -34,40 +34,40 @@ robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track)
 grab_motor.run_until_stalled(-200,then = Stop.COAST,duty_limit = 50)
 
 
- while True:
-     for i in range(4):
-         robot.turn(90, 100)
-         wait(100)
-    for i in range(2):
-        turn(180, -100)
-        wait(1000)
-    turn(360, 100)
+#  while True:
+#      for i in range(4):
+#          robot.turn(90, 100)
+#          wait(100)
+#     for i in range(2):
+#         turn(180, -100)
+#         wait(1000)
+#     turn(360, 100)
 
-grab.run_until_stalled(-100, then = Stop.COAST, duty_limit = 50)
-grab.reset_angle(0)
-grab.run_until_stalled(100, then = Stop.COAST, duty_limit = 50)
-grab.reset_angle(0)
-grab.run_target(-100, -100)
+# grab.run_until_stalled(-100, then = Stop.COAST, duty_limit = 50)
+# grab.reset_angle(0)
+# grab.run_until_stalled(100, then = Stop.COAST, duty_limit = 50)
+# grab.reset_angle(0)
+# grab.run_target(-100, -100)
 
-grab.run_until_stalled(-100, then = Stop.COAST, duty_limit = 50)
-shoot.run(2000)
-time.sleep(0.2)
-shoot.stop()
-shoot.run(-2000)
-time.sleep(0.2)
-shoot.stop()
+# grab.run_until_stalled(-100, then = Stop.COAST, duty_limit = 50)
+# shoot.run(2000)
+# time.sleep(0.2)
+# shoot.stop()
+# shoot.run(-2000)
+# time.sleep(0.2)
+# shoot.stop()
 
-# shooting_motor.run_until_stalled(-100,stop.COAST,duty_limit = 50)
-# grab_motor.run_until_stalled(100,stop.COAST,duty_limit = 100)
-# grab_motor.reset_angle(0)
+shooting_motor.run_until_stalled(-100,stop.COAST,duty_limit = 50)
+grab_motor.run_until_stalled(100,stop.COAST,duty_limit = 100)
+grab_motor.reset_angle(0)
 
-# grab_motor.run_target(100,-100)
+grab_motor.run_target(100,-100)
 
-# robot.straight(100)
+robot.straight(100)
 
-# grab_motor.run_until_stalled(200,stop.COAST,duty_limit = 50)
+grab_motor.run_until_stalled(200,stop.COAST,duty_limit = 50)
 
-# grab_motor.run_until_stalled(-200,stop.COAST,duty_limit = 50)
-# shooting_motor.run(2000)
-# time.sleep(0.25)
-# shooting_motor.stop()
+grab_motor.run_until_stalled(-200,stop.COAST,duty_limit = 50)
+shooting_motor.run(2000)
+time.sleep(0.25)
+shooting_motor.stop()
