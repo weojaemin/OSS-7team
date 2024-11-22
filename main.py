@@ -21,18 +21,17 @@ from pybricks.robotics import DriveBase
 
 ev3 = EV3Brick()
 
+ev3.speaker.beep()
 
 left_motor = Motor(Port.A)
 right_motor = Motor(Port.D)
 grab_motor= Motor(Port.B)
+shooting_motor = Motor(Port.C)
 
 wheel_diameter = 5.6
 axle_track = 115
 
-robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track) 
-
-grab_motor.run_until_stalled(-200,then = Stop.COAST,duty_limit = 50)
-
+robot = DriveBase(left_motor, right_motor, wheel_diameter, axle_track)
 
  while True:
      for i in range(4):
